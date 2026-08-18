@@ -19,15 +19,27 @@ The design and its rationale live in [workspace-harness-proposal.md](workspace-h
 ## Bootstrap a clone
 
 ```bash
-nix develop        # the Workspace tools: owlspec, lean-ctx, bd, apm, vcs, codex, claude
-lean-ctx trust     # see below — quiet to skip, and it changes behaviour
-apm install        # deploy instructions, Skills, hooks and MCP from apm.lock.yaml
+nix develop              # the Workspace tools: owlspec, lean-ctx, bd, apm, vcs, codex, claude
+lean-ctx trust           # see below — quiet to skip, and it changes behaviour
+apm install              # deploy instructions, Skills, hooks and MCP from apm.lock.yaml
+bd init --skip-agents    # a fresh work store; the flag matters, see below
 ```
 
 `nix develop` refuses to start unless every harness tool resolves from `/nix/store`, so a
 globally installed binary cannot silently shadow the pinned one. Entering the shell also
 extends the LeanCTX shell allowlist with `owlspec`, because LeanCTX otherwise blocks the
 Truth layer outright.
+
+### Why `bd init` needs `--skip-agents`
+
+Plain `bd init` writes `AGENTS.md`, creates `CLAUDE.md`, and registers Claude hooks — all
+files APM owns — and its generated instructions contradict the harness. `--skip-agents`
+creates only the work store. Run `apm audit` if you suspect a tool wrote where APM owns the
+file.
+
+`.beads/` is deliberately untracked here: this repository is a template, and a tracked store
+would hand every generated Workspace this project's issue history and Beads identity. A
+Project that is not a template should track its own `.beads/` so work state is shared.
 
 ### Why `lean-ctx trust` is a step
 

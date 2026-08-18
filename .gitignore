@@ -14,8 +14,12 @@ result-*
 .DS_Store
 *.swp
 
-# Beads keeps its local Dolt database and credentials out of the repository.
-# Shared work state travels as the exported JSONL under .beads/ instead.
+# This repository is a template, so it must not hand a new Workspace another
+# one's work. A tracked .beads/ would carry this project's issue history and its
+# Beads project identity into every Workspace generated from it, so the store
+# stays local and `bd init --skip-agents` creates a fresh one per clone.
+# A Project that is not a template should track its own .beads/ instead.
+.beads/
 .dolt/
 *.db
 .beads-credential-key

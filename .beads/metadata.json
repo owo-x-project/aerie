@@ -1,7 +1,0 @@
-{
-  "database": "dolt",
-  "backend": "dolt",
-  "dolt_mode": "embedded",
-  "dolt_database": "aerie",
-  "project_id": "d4114033-aea8-43a3-abcb-8cfc51c0a09d"
-}
