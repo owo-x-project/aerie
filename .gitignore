@@ -1,0 +1,21 @@
+# APM rebuilds its dependency cache from the lockfile.
+apm_modules/
+
+# Nix-generated links and direnv state.
+result
+result-*
+.direnv/
+
+# LeanCTX cognition state is local and derived. Do not commit session/cache data.
+.state/
+.lean-ctx/
+
+# OS and editor noise.
+.DS_Store
+*.swp
+
+# Beads keeps its local Dolt database and credentials out of the repository.
+# Shared work state travels as the exported JSONL under .beads/ instead.
+.dolt/
+*.db
+.beads-credential-key

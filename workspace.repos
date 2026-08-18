@@ -1,0 +1,9 @@
+# Repository composition is intentionally empty until projects are onboarded.
+# Add repositories using the vcs2l schema, for example:
+#
+# repositories:
+#   project-name:
+#     type: git
+#     url: https://example.invalid/project-name.git
+#     version: main
+repositories: {}

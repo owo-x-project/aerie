@@ -1,0 +1,31 @@
+# LeanCTX is a cognition layer, not an AI-configuration owner.
+rules_injection = "dedicated"
+
+# The shell allowlist does not know the Truth layer's binary, so LeanCTX blocks
+# every `owlspec` call routed through it. Declared here rather than through
+# `lean-ctx allow`, which writes to local state that is not shared.
+# This key is security-sensitive: LeanCTX withholds it until an operator runs
+# `lean-ctx trust` in the Workspace root, and again after this file changes.
+shell_allowlist_extra = ["owlspec"]
+
+[setup]
+auto_inject_rules = false
+auto_inject_skills = false
+auto_update_mcp = false
+
+[boundary_policy]
+audit_cross_access = true
+cross_project_search = false
+cross_project_import = false
+
+# Canonical and work-state responses must reach the agent unaltered. Compressing
+# them would let a derived layer change what Owlspec and Beads actually said.
+# The first four entries are the upstream defaults, preserved because setting
+# this key replaces the list rather than extending it.
+[archive]
+raw_commands = ["sqlite3", "psql", "duckdb", "jq", "owlspec", "bd"]
+
+# Canonical records are never read in bulk, but an incidental read must not be
+# lossy either.
+[proxy]
+compress_protect = [".owlspec/**"]

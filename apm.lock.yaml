@@ -1,0 +1,261 @@
+lockfile_version: '1'
+generated_at: '2026-08-18T13:29:12.336691+00:00'
+apm_version: 0.26.0
+dependencies:
+- repo_url: owo-x-project/owlspec
+  name: owlspec
+  host: github.com
+  resolved_commit: c6ec64f0b69301ce7b746a06a3fe97406b92b747
+  resolved_ref: v0.2.0
+  version: unknown
+  virtual_path: .apm/skills/owlspec
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/owlspec
+  - .agents/skills/owlspec/SKILL.md
+  - .agents/skills/owlspec/references/adoption.md
+  - .agents/skills/owlspec/references/authoring-changes.md
+  - .agents/skills/owlspec/references/semantic-judgement.md
+  - .agents/skills/owlspec/references/troubleshooting.md
+  - .claude/skills/owlspec
+  - .claude/skills/owlspec/SKILL.md
+  - .claude/skills/owlspec/references/adoption.md
+  - .claude/skills/owlspec/references/authoring-changes.md
+  - .claude/skills/owlspec/references/semantic-judgement.md
+  - .claude/skills/owlspec/references/troubleshooting.md
+  deployed_file_hashes:
+    .agents/skills/owlspec/SKILL.md: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
+    .agents/skills/owlspec/references/adoption.md: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
+    .agents/skills/owlspec/references/authoring-changes.md: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
+    .agents/skills/owlspec/references/semantic-judgement.md: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
+    .agents/skills/owlspec/references/troubleshooting.md: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
+    .claude/skills/owlspec/SKILL.md: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
+    .claude/skills/owlspec/references/adoption.md: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
+    .claude/skills/owlspec/references/authoring-changes.md: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
+    .claude/skills/owlspec/references/semantic-judgement.md: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
+    .claude/skills/owlspec/references/troubleshooting.md: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
+  content_hash: sha256:3b46320f0cb640093de683b1049e883e381c957c476b8bb04ccf912f72795c0a
+deployments:
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/adoption.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/authoring-changes.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/semantic-judgement.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/troubleshooting.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
+- kind: project-relative
+  target: agents
+  value: .agents/skills/workspace-harness
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/workspace-harness/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
+- kind: project-relative
+  target: claude
+  value: .claude/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
+- kind: project-relative
+  target: claude
+  value: .claude/rules/workspace-harness.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:4e1c0f49c0b513ec7cb67935b4afddb279d9a7a01cb1a772520adb134fe4eb00
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec/references/adoption.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec/references/authoring-changes.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec/references/semantic-judgement.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
+- kind: project-relative
+  target: claude
+  value: .claude/skills/owlspec/references/troubleshooting.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
+- kind: project-relative
+  target: claude
+  value: .claude/skills/workspace-harness
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/workspace-harness/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
+- kind: project-relative
+  target: codex
+  value: .codex/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
+- kind: uri
+  target: mcp
+  value: lean-ctx
+  runtime: claude
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: uri
+  target: mcp
+  value: lean-ctx
+  runtime: codex
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+mcp_servers:
+- lean-ctx
+mcp_configs:
+  lean-ctx:
+    name: lean-ctx
+    transport: stdio
+    env:
+      LEAN_CTX_HEADLESS: '1'
+      LEAN_CTX_RULES_INJECTION: dedicated
+    args:
+    - serve
+    - --stdio
+    registry: false
+    command: lean-ctx
+mcp_target_servers:
+  claude:
+  - lean-ctx
+  codex:
+  - lean-ctx
+local_deployed_files:
+- .agents/skills/workspace-harness
+- .agents/skills/workspace-harness/SKILL.md
+- .claude/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh
+- .claude/rules/workspace-harness.md
+- .claude/skills/workspace-harness
+- .claude/skills/workspace-harness/SKILL.md
+- .codex/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh
+local_deployed_file_hashes:
+  .agents/skills/workspace-harness/SKILL.md: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
+  .claude/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
+  .claude/rules/workspace-harness.md: sha256:4e1c0f49c0b513ec7cb67935b4afddb279d9a7a01cb1a772520adb134fe4eb00
+  .claude/skills/workspace-harness/SKILL.md: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
+  .codex/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
