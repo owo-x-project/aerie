@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-08-18T13:29:12.336691+00:00'
+generated_at: '2026-08-18T13:32:41.090507+00:00'
 apm_version: 0.26.0
 dependencies:
 - repo_url: owo-x-project/owlspec
@@ -126,7 +126,7 @@ deployments:
   owners:
   - .
   active_owner: .
-  content_hash: sha256:4e1c0f49c0b513ec7cb67935b4afddb279d9a7a01cb1a772520adb134fe4eb00
+  content_hash: sha256:429abe193e56f1906134547d8e2e812e77b74be4227fe6bc95d8818e93886e3c
 - kind: project-relative
   target: claude
   value: .claude/skills/owlspec
@@ -256,6 +256,6 @@ local_deployed_files:
 local_deployed_file_hashes:
   .agents/skills/workspace-harness/SKILL.md: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
   .claude/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
-  .claude/rules/workspace-harness.md: sha256:4e1c0f49c0b513ec7cb67935b4afddb279d9a7a01cb1a772520adb134fe4eb00
+  .claude/rules/workspace-harness.md: sha256:429abe193e56f1906134547d8e2e812e77b74be4227fe6bc95d8818e93886e3c
   .claude/skills/workspace-harness/SKILL.md: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
   .codex/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0

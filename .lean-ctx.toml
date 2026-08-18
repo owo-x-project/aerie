@@ -2,10 +2,12 @@
 rules_injection = "dedicated"
 
 # The shell allowlist does not know the Truth layer's binary, so LeanCTX blocks
-# every `owlspec` call routed through it. Declared here rather than through
-# `lean-ctx allow`, which writes to local state that is not shared.
-# This key is security-sensitive: LeanCTX withholds it until an operator runs
-# `lean-ctx trust` in the Workspace root, and again after this file changes.
+# every `owlspec` call routed through it. This declaration is the shared record
+# of that policy, but it does not carry it on its own: the key is
+# security-sensitive, so LeanCTX withholds it until an operator runs
+# `lean-ctx trust` here, and trust is scoped to this directory while Projects
+# are where owlspec actually runs. The dev shell therefore also writes the same
+# entry into the never-trust-gated data-dir config on entry.
 shell_allowlist_extra = ["owlspec"]
 
 [setup]

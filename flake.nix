@@ -209,6 +209,16 @@
                 exit 1
               fi
               unset missing_tools non_store_tools resolved
+
+              # LeanCTX gates shell commands against an allowlist that does not
+              # know the Truth layer's binary, so it blocks every owlspec call
+              # routed through it. The checked-in .lean-ctx.toml declares this,
+              # but that file is trust-gated and applies only to the Workspace
+              # directory, while Projects are where owlspec actually runs. The
+              # data-dir config is never trust-gated and is inherited by every
+              # directory entered from this shell. Additive and idempotent.
+              lean-ctx allow owlspec >/dev/null 2>&1 || \
+                echo "Workspace Harness: could not extend the LeanCTX allowlist; owlspec calls routed through LeanCTX may be blocked." >&2
             '';
           };
         }

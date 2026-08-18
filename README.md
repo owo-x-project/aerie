@@ -20,19 +20,22 @@ The design and its rationale live in [workspace-harness-proposal.md](workspace-h
 
 ```bash
 nix develop        # the Workspace tools: owlspec, lean-ctx, bd, apm, vcs, codex, claude
-lean-ctx trust     # see below — required, and easy to miss
+lean-ctx trust     # see below — quiet to skip, and it changes behaviour
 apm install        # deploy instructions, Skills, hooks and MCP from apm.lock.yaml
 ```
 
 `nix develop` refuses to start unless every harness tool resolves from `/nix/store`, so a
-globally installed binary cannot silently shadow the pinned one.
+globally installed binary cannot silently shadow the pinned one. Entering the shell also
+extends the LeanCTX shell allowlist with `owlspec`, because LeanCTX otherwise blocks the
+Truth layer outright.
 
 ### Why `lean-ctx trust` is a step
 
 LeanCTX withholds security-sensitive keys from a workspace `.lean-ctx.toml` until the
 workspace is trusted, and it does so **quietly** — the harness appears to work while
-`shell_allowlist_extra` and `rules_injection` are being ignored. Untrusted, LeanCTX blocks
-every `owlspec` call routed through it.
+`rules_injection` is ignored. Trust is also scoped to one directory, which is why the
+allowlist entry is applied by the dev shell instead: Projects are where `owlspec` actually
+runs, and they are separate workspaces to LeanCTX.
 
 Trust is pinned to the file's contents, so **re-run it after editing `.lean-ctx.toml`**.
 Check with `lean-ctx trust status`.
