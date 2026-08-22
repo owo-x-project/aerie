@@ -6,4 +6,12 @@
 #     type: git
 #     url: https://example.invalid/project-name.git
 #     version: main
-repositories: {}
+repositories:
+  owlgrowth:
+    type: git
+    url: https://github.com/owo-x-project/owlgrowth.git
+    version: main
+  owlknowledge:
+    type: git
+    url: https://github.com/owo-x-project/owlknowledge.git
+    version: main

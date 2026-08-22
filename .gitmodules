@@ -1,0 +1,8 @@
+[submodule "projects/owlgrowth"]
+	path = projects/owlgrowth
+	url = https://github.com/owo-x-project/owlgrowth.git
+	branch = main
+[submodule "projects/owlknowledge"]
+	path = projects/owlknowledge
+	url = https://github.com/owo-x-project/owlknowledge.git
+	branch = main
