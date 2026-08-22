@@ -23,3 +23,8 @@ result-*
 .dolt/
 *.db
 .beads-credential-key
+
+# Local handoff input. Keep the explanation, but do not commit materials placed
+# in the inbox itself.
+/inbox/*
+!/inbox/README.md
