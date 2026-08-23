@@ -23,10 +23,16 @@ dependencies:
     - name: lean-ctx
       registry: false
       transport: stdio
-      command: lean-ctx
+      # MCP clients start before PreToolUse hooks can enter the dev shell.
+      # Enter the pinned shell explicitly so this server is available even
+      # when Codex or Claude was launched outside `nix develop`.
+      command: nix
       args:
-        - serve
-        - --stdio
+        - develop
+        - --no-write-lock-file
+        - path:.
+        - --command
+        - lean-ctx
       env:
         LEAN_CTX_HEADLESS: "1"
         LEAN_CTX_RULES_INJECTION: dedicated

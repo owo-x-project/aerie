@@ -7,7 +7,7 @@
           {
             "type": "command",
             "command": "${PLUGIN_ROOT}/hooks/ensure-nix-develop.sh",
-            "timeout": 30,
+            "timeout": 120,
             "statusMessage": "Entering the workspace Nix environment"
           }
         ]

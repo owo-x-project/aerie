@@ -7,7 +7,7 @@
           "type": "command",
           "statusMessage": "Entering the workspace Nix environment",
           "command": ".claude/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh",
-          "timeout": 30
+          "timeout": 120
         }
       ],
       "_apm_source": "_local/aerie-workspace-harness"

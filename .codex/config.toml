@@ -1,6 +1,6 @@
 [mcp_servers.lean-ctx]
-command = "lean-ctx"
-args = ["serve", "--stdio"]
+command = "nix"
+args = ["develop", "--no-write-lock-file", "path:.", "--command", "lean-ctx"]
 id = ""
 
 [mcp_servers.lean-ctx.env]

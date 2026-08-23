@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-08-23T06:05:16.996773+00:00'
+generated_at: '2026-08-23T14:41:39.536019+00:00'
 apm_version: 0.26.0
 dependencies:
 - repo_url: owo-x-project/owlspec
@@ -37,6 +37,60 @@ dependencies:
     .claude/skills/owlspec/references/troubleshooting.md: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
   content_hash: sha256:3b46320f0cb640093de683b1049e883e381c957c476b8bb04ccf912f72795c0a
 deployments:
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: null
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/adoption.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/authoring-changes.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/semantic-judgement.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
+- kind: project-relative
+  target: agent-skills
+  value: .agents/skills/owlspec/references/troubleshooting.md
+  runtime: null
+  scope: project
+  owners:
+  - owo-x-project/owlspec/.apm/skills/owlspec
+  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
+  content_hash: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
 - kind: project-relative
   target: agents
   value: .agents/skills/workspace-harness
@@ -147,60 +201,6 @@ deployments:
   content_hash: sha256:65504c6ab0a8f206244d6ba382731804c3dbda2c82efb8342ff38070e9d56b7b
 - kind: project-relative
   target: codex
-  value: .agents/skills/owlspec
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: null
-- kind: project-relative
-  target: codex
-  value: .agents/skills/owlspec/SKILL.md
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: sha256:0bda1e3c04d12424aa2cd0d38c3b8b2d7e1d704821c9c1e0ecb9ef8eea0c8b11
-- kind: project-relative
-  target: codex
-  value: .agents/skills/owlspec/references/adoption.md
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: sha256:b7000f753b12252377bc321fb16bdc2988628e21ed0009495a7426b9a686fe68
-- kind: project-relative
-  target: codex
-  value: .agents/skills/owlspec/references/authoring-changes.md
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: sha256:af0cf2d3ea73e03ddba15ba74723b6ad6b8f1dba873d7a73b7c69afa3804ae94
-- kind: project-relative
-  target: codex
-  value: .agents/skills/owlspec/references/semantic-judgement.md
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: sha256:ddf6308e3d240ff3177b4c54a24d15181ffc2e142f7a022014dab6a0eee18d04
-- kind: project-relative
-  target: codex
-  value: .agents/skills/owlspec/references/troubleshooting.md
-  runtime: null
-  scope: project
-  owners:
-  - owo-x-project/owlspec/.apm/skills/owlspec
-  active_owner: owo-x-project/owlspec/.apm/skills/owlspec
-  content_hash: sha256:6483ddd15524eef48d749a30dfdf3a967c9d94051b3b558e6d23fc907ebd8c06
-- kind: project-relative
-  target: codex
   value: .codex/hooks/aerie-workspace-harness/hooks/ensure-nix-develop.sh
   runtime: null
   scope: project
@@ -236,10 +236,13 @@ mcp_configs:
       LEAN_CTX_HEADLESS: '1'
       LEAN_CTX_RULES_INJECTION: dedicated
     args:
-    - serve
-    - --stdio
+    - develop
+    - --no-write-lock-file
+    - path:.
+    - --command
+    - lean-ctx
     registry: false
-    command: lean-ctx
+    command: nix
 mcp_target_servers:
   claude:
   - lean-ctx

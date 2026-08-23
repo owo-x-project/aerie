@@ -2,14 +2,17 @@
   "mcpServers": {
     "lean-ctx": {
       "type": "stdio",
-      "command": "lean-ctx",
+      "command": "nix",
       "env": {
         "LEAN_CTX_HEADLESS": "1",
         "LEAN_CTX_RULES_INJECTION": "dedicated"
       },
       "args": [
-        "serve",
-        "--stdio"
+        "develop",
+        "--no-write-lock-file",
+        "path:.",
+        "--command",
+        "lean-ctx"
       ]
     }
   }
