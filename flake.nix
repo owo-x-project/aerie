@@ -113,10 +113,10 @@
                 inherit (asset) hash;
               };
 
-              nativeBuildInputs = pkgs.lib.optionals pkgs.stdenv.isLinux [
+              nativeBuildInputs = pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
                 pkgs.autoPatchelfHook
               ];
-              buildInputs = pkgs.lib.optionals pkgs.stdenv.isLinux [
+              buildInputs = pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
                 pkgs.glibc
                 pkgs.stdenv.cc.cc.lib
               ];
@@ -146,10 +146,10 @@
                 inherit (asset) hash;
               };
 
-              nativeBuildInputs = pkgs.lib.optionals pkgs.stdenv.isLinux [
+              nativeBuildInputs = pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
                 pkgs.autoPatchelfHook
               ];
-              buildInputs = pkgs.lib.optionals pkgs.stdenv.isLinux [
+              buildInputs = pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
                 pkgs.glibc
                 pkgs.stdenv.cc.cc.lib
               ];

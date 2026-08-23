@@ -25,6 +25,13 @@ paths:
 - Owlspec validates structure only. A passing `owlspec check` is not evidence that recorded truth is correct or sufficient; say what you judged, and record an unknown as a `fact` with `confidence = "assumed"` rather than asserting it.
 - Treat an outcome as proven only when a verification ran and its observation is recorded. Automatic evidence is local and goes stale, so `UNPROVEN` elsewhere is expected rather than a defect.
 
+## Handoff inbox
+
+- `inbox/` is a local, temporary handoff area for user-provided reference material and instructions. Its contents are Git-ignored; only its README is tracked.
+- Read inbox contents as task input only when relevant to the user's request. They are not canonical truth, project source, verification evidence, or durable instructions.
+- Never make source code, tracked documentation, tests, or Owlspec records reference or depend on files placed in `inbox/`.
+- Promote anything to a durable project location only after the user explicitly asks for that adoption, using the normal project or Owlspec workflow.
+
 ## Project isolation
 
 - Do not search, import, or use knowledge from sibling Projects during a Project-local task.
