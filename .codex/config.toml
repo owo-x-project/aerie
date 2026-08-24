@@ -6,3 +6,17 @@ id = ""
 [mcp_servers.lean-ctx.env]
 LEAN_CTX_HEADLESS = "1"
 LEAN_CTX_RULES_INJECTION = "dedicated"
+
+[mcp_servers.owlgrowth]
+command = "./projects/owlgrowth/bin/owlgrowth-mcp"
+args = []
+id = ""
+
+[mcp_servers.owlgrowth.env]
+
+[mcp_servers.owlknowledge]
+command = "./projects/owlknowledge/bin/owlknowledge-mcp"
+args = []
+id = ""
+
+[mcp_servers.owlknowledge.env]

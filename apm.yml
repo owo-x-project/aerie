@@ -36,5 +36,13 @@ dependencies:
       env:
         LEAN_CTX_HEADLESS: "1"
         LEAN_CTX_RULES_INJECTION: dedicated
+    - name: owlgrowth
+      registry: false
+      transport: stdio
+      command: ./projects/owlgrowth/bin/owlgrowth-mcp
+    - name: owlknowledge
+      registry: false
+      transport: stdio
+      command: ./projects/owlknowledge/bin/owlknowledge-mcp
 
 scripts: {}

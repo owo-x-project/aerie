@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-08-23T14:41:39.536019+00:00'
+generated_at: '2026-08-24T12:42:57.238156+00:00'
 apm_version: 0.26.0
 dependencies:
 - repo_url: owo-x-project/owlspec
@@ -210,7 +210,16 @@ deployments:
   content_hash: sha256:7111609dd8988c9e0a1c4bbe4984c21ea38482acbd665a72981e4a8f09c443a0
 - kind: uri
   target: mcp
-  value: lean-ctx
+  value: owlgrowth
+  runtime: claude
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: uri
+  target: mcp
+  value: owlknowledge
   runtime: claude
   scope: project
   owners:
@@ -226,8 +235,28 @@ deployments:
   - .
   active_owner: .
   content_hash: null
+- kind: uri
+  target: mcp
+  value: owlgrowth
+  runtime: codex
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: uri
+  target: mcp
+  value: owlknowledge
+  runtime: codex
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
 mcp_servers:
 - lean-ctx
+- owlgrowth
+- owlknowledge
 mcp_configs:
   lean-ctx:
     name: lean-ctx
@@ -243,11 +272,24 @@ mcp_configs:
     - lean-ctx
     registry: false
     command: nix
+  owlgrowth:
+    name: owlgrowth
+    transport: stdio
+    registry: false
+    command: ./projects/owlgrowth/bin/owlgrowth-mcp
+  owlknowledge:
+    name: owlknowledge
+    transport: stdio
+    registry: false
+    command: ./projects/owlknowledge/bin/owlknowledge-mcp
 mcp_target_servers:
   claude:
-  - lean-ctx
+  - owlgrowth
+  - owlknowledge
   codex:
   - lean-ctx
+  - owlgrowth
+  - owlknowledge
 local_deployed_files:
 - .agents/skills/workspace-harness
 - .agents/skills/workspace-harness/SKILL.md

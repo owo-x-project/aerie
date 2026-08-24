@@ -14,6 +14,16 @@
         "--command",
         "lean-ctx"
       ]
+    },
+    "owlgrowth": {
+      "type": "stdio",
+      "command": "./projects/owlgrowth/bin/owlgrowth-mcp",
+      "args": []
+    },
+    "owlknowledge": {
+      "type": "stdio",
+      "command": "./projects/owlknowledge/bin/owlknowledge-mcp",
+      "args": []
     }
   }
 }
