@@ -15,3 +15,7 @@ repositories:
     type: git
     url: https://github.com/owo-x-project/owlknowledge.git
     version: main
+  tessera:
+    type: git
+    url: https://github.com/owoDra/tessera.git
+    version: main

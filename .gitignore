@@ -14,6 +14,23 @@ result-*
 .DS_Store
 *.swp
 
+# Large local environments and build outputs must not enter Nix flake source
+# snapshots. Keep these artifacts outside the declarative source tree.
+.venv/
+.build/
+build/
+dist/
+target/
+__pycache__/
+*.pyc
+models/
+checkpoints/
+*.safetensors
+*.gguf
+*.pt
+*.pth
+*.bin
+
 # This repository is a template, so it must not hand a new Workspace another
 # one's work. A tracked .beads/ would carry this project's issue history and its
 # Beads project identity into every Workspace generated from it, so the store

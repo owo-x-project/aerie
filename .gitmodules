@@ -6,3 +6,7 @@
 	path = projects/owlknowledge
 	url = https://github.com/owo-x-project/owlknowledge.git
 	branch = main
+[submodule "projects/tessera"]
+	path = projects/tessera
+	url = https://github.com/owoDra/tessera.git
+	branch = main
