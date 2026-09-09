@@ -1,0 +1,14 @@
+{
+  "name": "aerie",
+  "description": "Aerie plugin distribution",
+  "owner": {
+    "name": "owoDra"
+  },
+  "plugins": [
+    {
+      "name": "aerie",
+      "source": "./",
+      "description": "Aerie plugin for Claude Code"
+    }
+  ]
+}

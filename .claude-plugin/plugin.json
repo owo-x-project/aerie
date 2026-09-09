@@ -1,0 +1,9 @@
+{
+  "name": "aerie",
+  "description": "Aerie plugin for Claude Code",
+  "version": "0.1.0",
+  "author": {
+    "name": "owoDra"
+  },
+  "repository": "https://github.com/owo-x-project/aerie"
+}
