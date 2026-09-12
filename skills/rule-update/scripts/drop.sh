@@ -15,8 +15,9 @@ file=$(aerie_rule_file "$1" "$2") || exit 1
 if [ -f "$aerie_rules_dir/$file" ]; then
   rm -f "$aerie_rules_dir/$file" || exit 1
   printf '%s をやめました\n' "$aerie_rules_dir/$file"
-  [ -f "$aerie_rules_builtin/$file" ] &&
+  if ! aerie_same_dir && [ -f "$aerie_rules_builtin/$file" ]; then
     printf '同梱に同じ名前があるので、これからは同梱のほうが効きます\n'
+  fi
   exit 0
 fi
 

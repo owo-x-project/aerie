@@ -14,7 +14,9 @@ file=$(aerie_rule_file "$1" "$2") || exit 1
 
 if [ -f "$aerie_rules_dir/$file" ]; then
   printf '%s\n' "$aerie_rules_dir/$file"
-  [ -f "$aerie_rules_builtin/$file" ] && printf '同梱の同じ名前を上書きしています\n'
+  if ! aerie_same_dir && [ -f "$aerie_rules_builtin/$file" ]; then
+    printf '同梱の同じ名前を上書きしています\n'
+  fi
   printf '\n'
   cat "$aerie_rules_dir/$file"
   exit 0

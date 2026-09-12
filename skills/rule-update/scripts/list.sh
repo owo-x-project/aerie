@@ -13,7 +13,7 @@ show() {
     match=$(aerie_rule_match "$f")
     [ -n "$match" ] || match=いつも
     note=$where
-    if [ "$where" = 同梱 ] && [ -f "$aerie_rules_dir/$base" ]; then
+    if [ "$where" = 同梱 ] && ! aerie_same_dir && [ -f "$aerie_rules_dir/$base" ]; then
       note='同梱（上書きあり）'
     fi
     printf '%s\t%s\t%s\n' "$base" "$match" "$note"
@@ -22,7 +22,7 @@ show() {
 
 {
   show "$aerie_rules_builtin" 同梱
-  [ "$aerie_rules_dir" = "$aerie_rules_builtin" ] || show "$aerie_rules_dir" こちら
+  aerie_same_dir || show "$aerie_rules_dir" こちら
 } | awk -F'\t' '
   { n[NR] = $1; m[NR] = $2; w[NR] = $3; if (length($1) > a) a = length($1) }
   END {

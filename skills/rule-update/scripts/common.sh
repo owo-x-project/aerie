@@ -4,10 +4,16 @@
 aerie_root=$(CDPATH= cd -- "$aerie_scripts/../../.." && pwd)
 
 # 同梱のルール置き場
-aerie_rules_builtin="$aerie_scripts/../assets"
+aerie_rules_builtin=$(CDPATH= cd -- "$aerie_scripts/.." && pwd)/assets
 
 # 書きこむ先。AERIE_RULES_DIR があればそこを使う
 aerie_rules_dir=${AERIE_RULES_DIR:-.aerie/rules}
+
+# 書きこむ先が同梱と同じ場所かどうか
+aerie_same_dir() {
+  d=$(CDPATH= cd -- "$aerie_rules_dir" 2>/dev/null && pwd) || return 1
+  [ "$d" = "$aerie_rules_builtin" ]
+}
 
 # 種類と名前からファイル名を作る。おかしければ何も返さずに 1 を返す
 aerie_rule_file() {
