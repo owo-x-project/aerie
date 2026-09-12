@@ -27,8 +27,10 @@ function glob2re(p,   i, c, r) {
   return r "$"
 }
 
-function rule_of(name,   i) {
-  for (i = 1; i <= rules; i++) if (name ~ pat[i]) return i
+# 対象の形に / がなければファイル名だけを見る
+function rule_of(path, name,   i) {
+  for (i = 1; i <= rules; i++)
+    if (byname[i] ? name ~ pat[i] : path ~ pat[i]) return i
   return 0
 }
 
@@ -42,6 +44,7 @@ BEGIN {
     if (n < 2) continue
     rules++
     pat[rules] = glob2re(f[1])
+    byname[rules] = (index(f[1], "/") == 0)
     lim[rules] = f[2]
     unit[rules] = (n >= 3 ? tolower(f[3]) : "tokens")
   }
@@ -51,15 +54,17 @@ BEGIN {
 NF >= 3 {
   lines = $1 + 0
   bytes = $2 + 0
-  name = $0
-  sub(/^[ \t]*[0-9]+[ \t]+[0-9]+[ \t]+/, "", name)
-  if (name == "total") next
-  i = rule_of(name)
+  path = $0
+  sub(/^[ \t]*[0-9]+[ \t]+[0-9]+[ \t]+/, "", path)
+  if (path == "total") next
+  name = path
+  sub(/^.*\//, "", name)
+  i = rule_of(path, name)
   if (i == 0 || lim[i] == "-") next
   if (unit[i] == "lines") {
-    if (lines > lim[i] + 0) printf "over\t%s\t%d\t%d\tlines\n", name, lines, lim[i]
+    if (lines > lim[i] + 0) printf "over\t%s\t%d\t%d\tlines\n", path, lines, lim[i]
   } else {
-    if (bytes > lim[i] + 0) printf "count\t%s\t%d\n", name, lim[i]
+    if (bytes > lim[i] + 0) printf "count\t%s\t%d\n", path, lim[i]
   }
 }
 ' | while IFS='	' read -r kind name value limit unit; do

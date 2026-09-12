@@ -10,6 +10,10 @@ Claude Code プラグイン。リポジトリ直下がそのままプラグイ�
   marketplace.json  # このリポジトリ自身を配布元にするための定義
 hooks/
   hooks.json        # フックの設定
+skills/
+  <名前>/SKILL.md   # スキル
+rules/
+  <効き方>-<名前>.md # 作業のしかたのきまり
 ```
 
 `skills/<名前>/SKILL.md` などを足す場合も、
