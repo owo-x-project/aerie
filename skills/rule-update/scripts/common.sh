@@ -4,7 +4,7 @@
 aerie_root=$(CDPATH= cd -- "$aerie_scripts/../../.." && pwd)
 
 # 同梱のルール置き場
-aerie_rules_builtin="$aerie_root/rules"
+aerie_rules_builtin="$aerie_scripts/../assets"
 
 # 書きこむ先。AERIE_RULES_DIR があればそこを使う
 aerie_rules_dir=${AERIE_RULES_DIR:-.aerie/rules}

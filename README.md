@@ -12,8 +12,6 @@ hooks/
   hooks.json        # フックの設定
 skills/
   <名前>/SKILL.md   # スキル
-rules/
-  <効き方>-<名前>.md # 作業のしかたのきまり
 ```
 
 `skills/<名前>/SKILL.md` などを足す場合も、
