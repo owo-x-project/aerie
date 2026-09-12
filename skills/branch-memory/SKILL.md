@@ -19,8 +19,8 @@ scripts/plan.sh <<'PLAN'
 - スキルを作る
 PLAN
 
-scripts/done.sh 1 3
-scripts/done.sh -u 2
+scripts/done.sh 1 3      # 1 番と 3 番を済みにする
+scripts/done.sh -u 2     # 2 番の印を外して、まだのものに戻す
 ```
 
 行の頭の印はそろえられるので気にしなくてよい。plan.sh は全文の書き直し。
