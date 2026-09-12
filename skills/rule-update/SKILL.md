@@ -36,7 +36,7 @@ scripts/write.sh tool commit <<'RULE'
 RULE
 ```
 
-書き直すときも同じ。前の中身を読んでから、直した全文を流しこむ。
+書き直すときも同じ。show.sh で前の中身を読んでから、直した全文を流しこむ。
 
 ## やめる
 
@@ -44,13 +44,14 @@ RULE
 scripts/drop.sh always reply-style
 ```
 
-## 並べて見る
+## 見る
 
 ```sh
 scripts/list.sh
+scripts/show.sh always reply-style
 ```
 
-新しく作る前に必ず見て、近いものがあればそれを書き直す。
+list.sh で今あるものを並べ、show.sh で中身を見る。新しく作る前に必ず見て、近いものがあればそれを書き直す。
 
 ## 書きかたのきまり
 
