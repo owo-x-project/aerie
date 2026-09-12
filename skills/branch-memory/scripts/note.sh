@@ -22,7 +22,7 @@ fi
 mkdir -p "$dir" || exit 1
 printf -- '- %s %s\n' "$(date +%Y-%m-%d)" "$text" >> "$dir/notes.md"
 
-over=$(sh "$aerie_root/hooks/tasks/checks/tokens.sh" "$dir/notes.md" 2>/dev/null)
+over=$(sh "$aerie_hooks/tasks/checks/tokens.sh" "$dir/notes.md" 2>/dev/null)
 printf '%s に足しました\n' "$dir/notes.md"
 [ -n "$over" ] && printf '気づきが溜まっています。きまりか案件のスキルに直して、片づけてください\n%s\n' "$over"
 exit 0
