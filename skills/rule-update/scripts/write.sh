@@ -1,16 +1,28 @@
 #!/bin/sh
 # ルールを作る、または書き直す。本文は標準入力から受けとる
-# 使い方: write.sh <always|path|tool> <名前> [合わせる形]
+# 使い方: write.sh always <名前> [説明]
+#         write.sh <path|tool> <名前> <合わせる形> [説明]
 
 aerie_scripts=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd) || exit 1
 . "$aerie_scripts/common.sh"
 
 kind=$1
 name=$2
-match=$3
+if [ "$kind" = always ]; then
+  match=''
+  description=$3
+else
+  match=$3
+  description=$4
+fi
 
 if [ -z "$kind" ] || [ -z "$name" ]; then
-  printf '使い方: write.sh <always|path|tool> <名前> [合わせる形]\n' >&2
+  printf '使い方: write.sh always <名前> [説明] / write.sh <path|tool> <名前> <合わせる形> [説明]\n' >&2
+  exit 1
+fi
+
+if [ -z "$description" ]; then
+  printf 'description がありません。注入時の節名になる説明を付けてください\n' >&2
   exit 1
 fi
 
@@ -46,6 +58,7 @@ trap 'rm -rf "$tmp"' EXIT INT TERM
 {
   printf -- '---\n'
   printf 'name: %s\n' "$name"
+  [ -n "$description" ] && printf 'description: %s\n' "$description"
   [ -n "$match" ] && printf 'match: %s\n' "$match"
   printf -- '---\n\n'
   printf '%s\n' "$body"
