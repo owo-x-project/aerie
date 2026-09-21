@@ -17,6 +17,23 @@ skills/
 `skills/<名前>/SKILL.md` などを足す場合も、
 すべて `.claude-plugin/` の中ではなくリポジトリ直下に置く。
 
+## 段階
+
+`sh skills/project-stage/scripts/stage.sh early` のように一度設定すると、
+プロジェクト直下の `.aerie/stage.conf` に記録される。明示的な更新がない限り、
+作業中は変えない。なければ `stable` とする。試作では長さ超過や危険な操作を
+知らせるだけにし、互換性を作らない。安定化では既存の動きを保ち、運用では
+利用者、データ、連携先を守る。方針はセッション開始と圧縮後に自動で注入する。
+
+## 作業の流れ
+
+変更作業では `task-loop` が目的、範囲、完了条件、実装物を正本にした検査を扱う。
+最後に `sh skills/task-loop/scripts/close.sh` を実行する。説明や理解確認もこの流れに
+含める。文章の方針は同梱の `always-clear-writing.md` で常に参照する。きまりの
+重なりは `skills/rule-update/scripts/conflicts.sh` で見る。
+
+ソース、試験、コメントを正本とし、内容を言い換えただけの設計書は作らない。
+
 ## 開発
 
 ```bash
