@@ -5,6 +5,10 @@ here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 root=$(CDPATH= cd -- "$here/.." && pwd)
 . "$root/lib/test.sh"
 
+# このテストは、超過時に入口が止める安定化段階の動きを検査する。
+# 呼び出し元のプロジェクト段階に結果を左右されないよう固定する。
+export AERIE_STAGE=stable
+
 tmp=$(mktemp -d) || exit 1
 trap 'rm -rf "$tmp"' EXIT INT TERM
 
