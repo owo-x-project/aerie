@@ -25,5 +25,13 @@ esac
 found=$(aerie_run_checks "$file")
 [ -n "$found" ] || exit 0
 
-printf '%s\n上限を超えました。分けるか短くしてください。\n' "$found" >&2
-exit 2
+case $(aerie_stage_action edit) in
+  warn)
+    printf '%s\n上限を超えました。初期段階なので止めません。必要なら分けるか短くしてください。\n' "$found" >&2
+    exit 0
+    ;;
+  *)
+    printf '%s\n上限を超えました。分けるか短くしてから進めてください。\n' "$found" >&2
+    exit 2
+    ;;
+esac
