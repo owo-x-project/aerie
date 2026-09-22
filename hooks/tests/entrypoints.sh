@@ -13,8 +13,9 @@ tmp=$(mktemp -d) || exit 1
 trap 'rm -rf "$tmp"' EXIT INT TERM
 
 # 書いた直後の検査
-big="$tmp/always-big.md"
-awk 'BEGIN{for(i=0;i<300;i++)print "- あいうえおかきくけこ"}' > "$big"
+# この入口では既定の行数上限を超えるテキストで停止を確認する。
+big="$tmp/oversized.txt"
+awk 'BEGIN{for(i=0;i<701;i++)print "long enough line"}' > "$big"
 printf '{"tool_input":{"file_path":"%s"}}' "$big" | sh "$root/entrypoints/after-edit.sh" >/dev/null 2>&1
 aerie_eq '大きいものを書いたら止める' 2 $?
 
