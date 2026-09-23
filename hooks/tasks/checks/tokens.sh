@@ -6,7 +6,11 @@ aerie_hooks=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd) || exit 0
 . "$aerie_hooks/lib/common.sh"
 
 conf=$(aerie_config checks/tokens.conf)
-[ -f "$conf" ] || exit 0
+builtin_conf="$aerie_hooks/configs/checks/tokens.conf"
+if [ "$conf" = "$builtin_conf" ]; then
+  builtin_conf=''
+fi
+[ -f "$conf" ] || [ -n "$builtin_conf" ] || exit 0
 
 if [ "$#" -gt 0 ]; then
   for f in "$@"; do
@@ -14,7 +18,7 @@ if [ "$#" -gt 0 ]; then
   done
 else
   git ls-files -z 2>/dev/null
-fi | xargs -0 wc -lc 2>/dev/null | LC_ALL=C awk -v conf="$conf" '
+fi | xargs -0 wc -lc 2>/dev/null | LC_ALL=C awk -v conf="$conf" -v builtin_conf="$builtin_conf" '
 function glob2re(p,   i, c, r) {
   r = "^"
   for (i = 1; i <= length(p); i++) {
@@ -36,7 +40,12 @@ function rule_of(path, name,   i) {
 
 BEGIN {
   rules = 0
-  while ((getline line < conf) > 0) {
+  load_rules(conf)
+  if (builtin_conf != "") load_rules(builtin_conf)
+}
+
+function load_rules(file,   line, n, f) {
+  while ((getline line < file) > 0) {
     sub(/#.*/, "", line)
     gsub(/^[ \t]+|[ \t]+$/, "", line)
     if (line == "") continue
@@ -48,7 +57,7 @@ BEGIN {
     lim[rules] = f[2]
     unit[rules] = (n >= 3 ? tolower(f[3]) : "tokens")
   }
-  close(conf)
+  close(file)
 }
 
 NF >= 3 {

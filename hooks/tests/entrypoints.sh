@@ -11,19 +11,25 @@ export AERIE_STAGE=stable
 
 tmp=$(mktemp -d) || exit 1
 trap 'rm -rf "$tmp"' EXIT INT TERM
+project="$tmp/project"
+mkdir -p "$project/.aerie"
+cat > "$project/.aerie/tokens.conf" <<'CONF'
+# 同梱の上限に加えて、プロジェクト固有の除外を指定する
+addons/godot_mcp/** -
+CONF
 
 # 書いた直後の検査
 # この入口では既定の行数上限を超えるテキストで停止を確認する。
 big="$tmp/oversized.txt"
 awk 'BEGIN{for(i=0;i<701;i++)print "long enough line"}' > "$big"
-printf '{"tool_input":{"file_path":"%s"}}' "$big" | sh "$root/entrypoints/after-edit.sh" >/dev/null 2>&1
+printf '{"tool_input":{"file_path":"%s"}}' "$big" | (cd "$project" && sh "$root/entrypoints/after-edit.sh") >/dev/null 2>&1
 aerie_eq '大きいものを書いたら止める' 2 $?
 
 printf -- '- みじかい\n' > "$tmp/always-small.md"
-printf '{"tool_input":{"file_path":"%s"}}' "$tmp/always-small.md" | sh "$root/entrypoints/after-edit.sh" >/dev/null 2>&1
+printf '{"tool_input":{"file_path":"%s"}}' "$tmp/always-small.md" | (cd "$project" && sh "$root/entrypoints/after-edit.sh") >/dev/null 2>&1
 aerie_eq 'みじかいものは通す' 0 $?
 
-printf '{"tool_input":{}}' | sh "$root/entrypoints/after-edit.sh" >/dev/null 2>&1
+printf '{"tool_input":{}}' | (cd "$project" && sh "$root/entrypoints/after-edit.sh") >/dev/null 2>&1
 aerie_eq 'ファイルの名前がなくても静か' 0 $?
 
 # マージの前の見張り
