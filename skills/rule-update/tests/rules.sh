@@ -10,6 +10,11 @@ tmp=$(mktemp -d) || exit 1
 trap 'rm -rf "$tmp"' EXIT INT TERM
 export AERIE_RULES_DIR="$tmp"
 
+# 設定ファイルを読む作業ディレクトリを切り、呼び出し元プロジェクトの上限設定に左右されないようにする。
+project="$tmp/project"
+mkdir -p "$project"
+cd "$project" || exit 1
+
 aerie_ok '作る' sh -c "printf -- '- みじかく書く\n' | sh '$s/write.sh' always reply-test 'テスト用の返答'"
 [ -f "$tmp/always-reply-test.md" ] || aerie_ng '作ったファイルがありません'
 
