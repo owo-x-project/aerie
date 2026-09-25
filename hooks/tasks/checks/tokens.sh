@@ -33,8 +33,10 @@ function glob2re(p,   i, c, r) {
 
 # 対象の形に / がなければファイル名だけを見る
 function rule_of(path, name,   i) {
-  for (i = 1; i <= rules; i++)
-    if (byname[i] ? name ~ pat[i] : path ~ pat[i]) return i
+  for (i = 1; i <= rules; i++) {
+    if (byname[i] && name ~ pat[i]) return i
+    if (!byname[i] && path ~ pat[i]) return i
+  }
   return 0
 }
 
