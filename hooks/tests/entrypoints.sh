@@ -40,7 +40,7 @@ merge='{"tool_input":{"command":"git merge main"}}'
 printf '%s' "$merge" | sh "$root/entrypoints/before-bash.sh" >/dev/null 2>&1
 aerie_eq '覚え書きがなければ通す' 0 $?
 
-branch=$(cd "$root/.." && git rev-parse --abbrev-ref HEAD 2>/dev/null | tr '/ ' '--')
+branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null | tr '/ ' '--')
 mkdir -p "$mem/$branch"
 printf -- '- 気づいたこと\n' > "$mem/$branch/notes.md"
 
@@ -58,7 +58,7 @@ printf '{"tool_input":{"command":"ls"}}' | sh "$root/entrypoints/before-bash.sh"
 aerie_eq '関わりのない命令は通す' 0 $?
 
 # セッションの始め
-got=$(cd "$root/.." && AERIE_MEMORY_DIR="$mem" sh "$root/entrypoints/session-start.sh" 2>&1)
+got=$(AERIE_MEMORY_DIR="$mem" sh "$root/entrypoints/session-start.sh" 2>&1)
 aerie_eq 'セッションの始めは止めない' 0 $?
 aerie_has '覚え書きを出す' '気づいたこと' "$got"
 aerie_has '片づけを促す' 'clear.sh -f' "$got"
